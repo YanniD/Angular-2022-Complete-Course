@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
+  userName: string = "";
+  isDisabled: boolean = true
+  
+  onKeyCheckIfDataIsFull(event: any) {
+    if (this.userName.length == 0) {
+      this.isDisabled = true;
+    }
+    else {
+      this.isDisabled = false;
+    }
+  }
+  onClickResetUsername() {
+    this.userName = "";
+  }
 }
+
+
