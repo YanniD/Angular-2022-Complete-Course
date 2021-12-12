@@ -1,4 +1,5 @@
 <label for="userName">Username:</label><br>
-<input type=text id='userName' name="userName" [(ngModel)]="userName" (keyup)='onKeyCheckIfDataIsFull($event)'>
+<input type=text id='userName' name="userName" class="form-control" [(ngModel)]="userName" (keyup)='onKeyCheckIfDataIsFull($event)'>
 <p>Your typed username is : {{userName}}</p>
 <button [disabled]="isDisabled" (click)='onClickResetUsername()'>Reset Username</button>
+
