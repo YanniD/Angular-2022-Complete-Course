@@ -3,3 +3,10 @@
 <p>Your typed username is : {{userName}}</p>
 <button [disabled]="isDisabled" (click)='onClickResetUsername()'>Reset Username</button>
 
+
+
+<button (click)="onClickLogToggle()">Display details</button>
+<p *ngIf="showParagraph" >This is test paragraph</p>
+<ul *ngFor="let item of arrayLogAmount; index as i">
+    <li [ngStyle]="{'background-color': i > 5 ? 'blue' : 'white' }" [ngClass]="{white: i> 5}" >{{item}}</li>
+</ul>
