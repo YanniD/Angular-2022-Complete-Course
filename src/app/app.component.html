@@ -1,4 +1,4 @@
-<label for="userName">Username:</label><br>
+<!-- <label for="userName">Username:</label><br>
 <input type=text id='userName' name="userName" class="form-control" [(ngModel)]="userName" (keyup)='onKeyCheckIfDataIsFull($event)'>
 <p>Your typed username is : {{userName}}</p>
 <button [disabled]="isDisabled" (click)='onClickResetUsername()'>Reset Username</button>
@@ -9,4 +9,13 @@
 <p *ngIf="showParagraph" >This is test paragraph</p>
 <ul *ngFor="let item of arrayLogAmount; index as i">
     <li [ngStyle]="{'background-color': i > 5 ? 'blue' : 'white' }" [ngClass]="{white: i> 5}" >{{item}}</li>
-</ul>
+</ul> -->
+
+<app-header></app-header>
+<div class="container">
+    <div class="col-md-6">
+        <div *ngFor="let recipe of Recipes;">
+            <app-recipe [Recipe]="recipe"></app-recipe>
+        </div>
+    </div>
+</div>
