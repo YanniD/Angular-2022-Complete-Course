@@ -1,0 +1,23 @@
+    <h1>{{recipeDetail.title}}</h1>
+    <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Dropdown link
+            <span class="caret"></span></a>
+
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+        </ul>
+    </div>
+    <p>{{recipeDetail.description}}</p>
+    <ul *ngFor="let ingredient of recipeDetail.ingredients">
+        <li>
+            {{ingredient}}
+        </li>
+    </ul>

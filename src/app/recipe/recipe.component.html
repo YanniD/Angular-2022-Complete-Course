@@ -1,15 +1,13 @@
-
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title text-center">{{Recipe.title}}</h3>
-            </div>
-            <div class="panel-body">
-                <div class="col-md-8">
-                    <p>{{Recipe.description}}</p>
-                </div>
-                <div class="col-md-4">
-                    <img class="pull-right img-responsive" src="{{Recipe.imageUrl}}" alt="ImageUrl">                
-                </div>
-                
-            </div>
-        </div>    
+<div class="row">
+    <div class="col-md-6">
+    <app-recipe-list (selectedRecipeChangedEvent)="updateSelectedDetailRecipe($event)"></app-recipe-list>
+    </div>
+    <div class="col-md-6">
+        <app-recipe-detail 
+        [recipeDetail]="recipeDetail"
+        *ngIf="recipeDetail; else infoText"></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please select a Recipe!</p>
+        </ng-template>
+    </div>
+</div>

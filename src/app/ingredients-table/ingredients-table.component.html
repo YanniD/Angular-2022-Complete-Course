@@ -1,0 +1,17 @@
+<div class="row col-md-6">
+    <app-ingredient-add (ingredientCreatedEvent)="pushIngredientToTable($event)"></app-ingredient-add>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let ingredient of Ingredients">
+        <tr>
+            <td>{{ingredient.Name}}</td>
+            <td>{{ingredient.Amount}}</td>
+        </tr>
+    </tbody>
+</table>

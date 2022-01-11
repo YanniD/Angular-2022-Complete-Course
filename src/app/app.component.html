@@ -11,11 +11,14 @@
     <li [ngStyle]="{'background-color': i > 5 ? 'blue' : 'white' }" [ngClass]="{white: i> 5}" >{{item}}</li>
 </ul> -->
 
-<app-header></app-header>
+<app-header (navPageEvent)="updatePage($event)"></app-header>
 <div class="container">
-    <div class="col-md-6">
-        <div *ngFor="let recipe of Recipes;">
-            <app-recipe [Recipe]="recipe"></app-recipe>
+    <app-recipe *ngIf="ShowPage ==='recipe'"></app-recipe>
+    <div *ngIf="ShowPage ==='shopping-list'">
+        <div class="row">
+            <div class="col-md-12">
+                <app-ingredient-table></app-ingredient-table>
+            </div>
         </div>
     </div>
 </div>
