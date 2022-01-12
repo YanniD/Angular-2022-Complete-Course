@@ -1,4 +1,5 @@
-import { Ingredient } from '../Model/Ingredient';
+import { Ingredient } from './../Model/Ingredient';
+import { IngredientService } from './../services/ingredient.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,17 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingredients-table.component.css']
 })
 export class IngredientTableComponent implements OnInit {
-  Ingredients: Ingredient[] = [new Ingredient("tomato", 12),
-                                            new Ingredient("Cheese", 10),
-                                            new Ingredient("BBQ sauce", 3),
-                                            new Ingredient("Olives",40)]
-  constructor() { }
+  Ingredients: Ingredient[];
+  constructor(private IngredientService:IngredientService) { }
 
   ngOnInit(): void {
-  }
-
-  pushIngredientToTable(ingredient: Ingredient) {
-    this.Ingredients.push(ingredient);
+      this.Ingredients = this.IngredientService.Ingredients;
+    this.IngredientService.reloadIngredientsArrayEvent.subscribe((newIngredientArray:Ingredient[]) => this.Ingredients = newIngredientArray)
   }
 
 }
