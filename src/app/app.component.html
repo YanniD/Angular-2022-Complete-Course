@@ -12,13 +12,15 @@
 </ul> -->
 
 <app-header (navPageEvent)="updatePage($event)"></app-header>
+
 <div class="container">
-    <app-recipe *ngIf="ShowPage ==='recipe'"></app-recipe>
+    <!-- <app-recipe *ngIf="ShowPage ==='recipe'"></app-recipe>
     <div *ngIf="ShowPage ==='shopping-list'">
         <div class="row">
             <div class="col-md-12">
                 <app-ingredient-table></app-ingredient-table>
             </div>
         </div>
-    </div>
+    </div> -->
+    <router-outlet></router-outlet>
 </div>
