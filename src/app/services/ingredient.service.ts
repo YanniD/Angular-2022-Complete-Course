@@ -8,10 +8,10 @@ export class IngredientService {
 
   reloadIngredientsArrayEvent: EventEmitter<Ingredient[]> = new EventEmitter<Ingredient[]>()
 
-  private _ingredients: Ingredient[] = [new Ingredient("tomato", 12),
-                                            new Ingredient("Cheese", 10),
-                                            new Ingredient("BBQ sauce", 3),
-    new Ingredient("Olives", 40)]
+  private _ingredients: Ingredient[] = [new Ingredient(1,"tomato", 12),
+                                            new Ingredient(2,"Cheese", 10),
+                                            new Ingredient(3,"BBQ sauce", 3),
+    new Ingredient(4,"Olives", 40)]
   
   
   public get Ingredients(): Ingredient[] {

@@ -21,7 +21,7 @@ export class IngredientAddComponent implements OnInit {
   addIngredient() {
     var name = this.nameInputRef.nativeElement.value
     var amount =this.amountInputRef.nativeElement.value
-    var ingredient: Ingredient = new Ingredient(name, amount)
+    var ingredient: Ingredient = new Ingredient(6,name, amount)
     this.IngredientService.addNewIngredient(ingredient);
   }
 

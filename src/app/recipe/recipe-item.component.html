@@ -1,4 +1,4 @@
-<a href="#" (click)="selectedRecipe()">
+<a [routerLink]="['/recipes', Recipe.id]">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title text-center">{{Recipe.title}}</h3>

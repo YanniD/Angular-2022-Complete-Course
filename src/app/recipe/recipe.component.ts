@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../Model/Recipe';
 import { RecipeService } from '../services/recipe.service';
@@ -9,12 +10,11 @@ import { RecipeService } from '../services/recipe.service';
 })
 export class RecipeComponent implements OnInit {
 
-  recipeDetail: Recipe;
-  constructor(private recipeService: RecipeService) { 
-   this.recipeService.selectedRecipeEvent.subscribe((recipe:Recipe) => this.recipeDetail = recipe);
+  constructor() { 
   }
 
   ngOnInit(): void {
+    
   }
   
 
